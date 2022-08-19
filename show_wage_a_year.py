@@ -8,21 +8,13 @@ cur_dir='./csv_data2020'
 wage_per_one = '一人当たり賃金（万円）'
 all_wage_per_one = '全国_一人当たり賃金（万円）'
 
-def shoe_wage_a_year(df_jp_ind, df_pref_ind):
+def show_wage_a_year(df_jp_ind,df_pref_mean, options):
+
     st.header('集計年別の一人当たり賃金の推移')
     df_mean = df_jp_ind[df_jp_ind['年齢'] == '年齢計']
     df_mean = df_mean.rename(columns={wage_per_one: all_wage_per_one })
     #df_mean
 
-    df_pref_mean = df_pref_ind[df_pref_ind['年齢'] == '年齢計']
-    #df_pref_mean
-    pref_list = df_pref_mean['都道府県名'].unique()
-
-    options = st.multiselect(
-        'Check prefecture name you want to compare',
-        pref_list,
-        default='東京都',
-    )
     #選択した都道府県のデータを抽出
     colname=[]
     for i,op in enumerate(options):
