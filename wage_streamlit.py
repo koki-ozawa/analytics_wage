@@ -45,7 +45,7 @@ with st.sidebar:
         pref_list = df_pref_mean['都道府県名'].unique()
         options = st.multiselect(
             'Check prefecture name you want to compare',
-            pref_list,
+            options=list(pref_list),
             default=['東京都'],
         )
     if option == select_list[2]:
