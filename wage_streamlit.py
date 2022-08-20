@@ -3,6 +3,7 @@ import streamlit as st
 import pydeck as pdk
 import plotly.express as px
 import show_heatmap as sh
+import numpy as np
 import show_wage_a_year as sw
 import show_ave_wage as sa
 import show_industry as si
@@ -45,7 +46,7 @@ with st.sidebar:
         options = st.multiselect(
             'Check prefecture name you want to compare',
             pref_list,
-            default='東京都',
+            default=['東京都'],
         )
     if option == select_list[2]:
         show_all_pre_average = True
