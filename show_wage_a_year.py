@@ -1,4 +1,3 @@
-from tkinter.tix import Tree
 import pandas as pd
 import streamlit as st
 import pydeck as pdk
